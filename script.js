@@ -114,9 +114,9 @@ gl.enable(gl.DEPTH_TEST);
 gl.clear(gl.COLOR_BUFFER_BIT);
 
 // Set the view port
-gl.viewport(0,0,canvas.width,canvas.height);
+gl.viewport(0,0,canvas.clientWidth,canvas.clientHeight);
 
 // Draw the triangle
 gl.drawElements(gl.TRIANGLES, indices.length, gl.UNSIGNED_SHORT,0);
 
-log("Done Drawing")
+console.log("Done Drawing (" + canvas.clientWidth + " x " + canvas.clientHeight + ")");

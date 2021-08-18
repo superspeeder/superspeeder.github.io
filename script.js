@@ -11,3 +11,4 @@ gl.vertex2f(1.0,0.0);
 gl.vertex2f(0.0,1.0);
 gl.end(gl.TRIANGLES)
 
+log("Done Drawing")

@@ -1,8 +1,7 @@
 var canvas = document.getElementById("canvas");
 var gl = canvas.getContext('experimental-webgl');
 
-gl.clearColor(1,0,0,1);
-gl.clear(gl.COLOR_BUFFER_BIT);
+
 
 var vertices = [
     -0.5,0.5,0.0,
@@ -103,7 +102,8 @@ gl.vertexAttribPointer(coord, 3, gl.FLOAT, false, 0, 0);
 gl.enableVertexAttribArray(coord);
 
 /*=========Drawing the triangle===========*/
-
+gl.clearColor(1,0,0,1);
+gl.clear(gl.COLOR_BUFFER_BIT);
 // Enable the depth test
 gl.enable(gl.DEPTH_TEST);
 

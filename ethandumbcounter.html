@@ -8,16 +8,12 @@
     <script>
       var ebyid = document.getElementById("E")
       ebyid.textContent = "Ethan Dumb Count: " + Math.floor((new Date() - new Date("2022-10-7 16:56")) / (1000 * 60))
-      var nextMin = new Date()
-      nextMin.setMilliseconds(0)
-      nextMin.setSeconds(0)
-      nextMin.setMinutes(nextMin.getMinutes + 1)
       setTimeout(function() {
         ebyid.textContent = "Ethan Dumb Count: " + Math.floor((new Date() - new Date("2022-10-7 16:56")) / (1000 * 60))
         setInterval(function() {
           ebyid.textContent = "Ethan Dumb Count: " + Math.floor((new Date() - new Date("2022-10-7 16:56")) / (1000 * 60))  
         }, 60 * 1000);
-      }, nextMin - new Date());
+      }, 1000 * (60 - new Date().getSeconds()));
       
     </script>
 <html>

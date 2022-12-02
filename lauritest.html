@@ -5,6 +5,10 @@
   <body>
     <h1>Bad: <span id="bad"></span>%</h1>
     <h1>Worse: <span id="worse"></span>%</h1>
+    <h1>Boring(A): <span id="boring-bad"></span>%</h1>
+    <h1>Boring(B): <span id="boring-worse"></span>%</h1>
+    <h1>Good(A): <span id="good-bad"></span>%</h1>
+    <h1>Good(B): <span id="good-worse"></span>%</h1>
     <script>
       function getRandomInt(min, max) {
         min = Math.ceil(min);
@@ -16,6 +20,10 @@
       
       var bad = document.getElementById("bad");
       var worse = document.getElementById("worse");
+      var boringbad = document.getElementById("boring-bad");
+      var boringworse = document.getElementById("boring-worse");
+      var goodbad = document.getElementById("good-bad");
+      var goodworse = document.getElementById("good-worse");
 
       var ns = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0 };
       for (var i = 0 ; i < n ; i++) {
@@ -28,7 +36,11 @@
       }
 
       bad.textContent = (ns[3] + ns[10]) / (n / 100);
-      worse.textContent = (ns[3] + ns[10] + ns[11] + ns[12]) / (n / 100);
+      worse.textContent = (ns2[3] + ns2[10] + ns2[11] + ns2[12]) / (n / 100);
+      boringbad.textContent = (ns[1] + ns[2] + ns[6] + ns[8] + ns[9]) / (n / 100);
+      boringworse.textContent = (ns2[1] + ns2[2] + ns2[6] + ns2[8] + ns2[9]) / (n / 100);
+      goodbad.textContent = (ns[4] + ns[5] + ns[7]) / (n / 100);
+      goodworse.textContent = (ns2[4] + ns2[5] + ns2[7]) / (n / 100);
     </script>
   </body>
 </html>

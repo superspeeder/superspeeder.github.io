@@ -4,6 +4,7 @@
   </head>
   <body>
     <h1>Bad: <span id="bad"></span>%</h1>
+    <h1>Worse: <span id="worse"></span>%</h1>
     <script>
       function getRandomInt(min, max) {
         min = Math.ceil(min);
@@ -14,11 +15,20 @@
       var n = 10000.0;
       
       var bad = document.getElementById("bad");
+      var worse = document.getElementById("worse");
+
       var ns = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0 };
       for (var i = 0 ; i < n ; i++) {
         ns[getRandomInt(1,10)] += 1;
       }
+
+      var ns2 = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0, 11: 0, 12: 0 };
+      for (var i = 0 ; i < n ; i++) {
+        ns2[getRandomInt(1,12)] += 1;
+      }
+
       bad.textContent = (ns[3] + ns[10]) / (n / 100);
+      worse.textContent = (ns[3] + ns[10] + ns[11] + ns[12]) / (n / 100);
     </script>
   </body>
 </html>
